@@ -1,0 +1,19 @@
+<module>
+	<rawname>amd</rawname>
+	<repo>standard</repo>
+	<name>Amd</name>
+	<version>13.0.1</version>
+	<publisher>Schmooze Com. Inc.</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<changelog>*13.0.1* Initial release</changelog>
+	<category>Settings</category>
+	<menuitems>
+		<amd>AMD Settings</amd>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location />
+	<md5sum />
+</module>
