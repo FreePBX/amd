@@ -1,19 +1,20 @@
 <module>
 	<rawname>amd</rawname>
 	<repo>standard</repo>
-	<name>Amd</name>
+	<name>AMD</name>
 	<version>13.0.1</version>
 	<publisher>Schmooze Com. Inc.</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
-	<changelog>*13.0.1* Initial release</changelog>
-	<category>Settings</category>
+	<category>Applications</category>
+	<description>This module is used to manage AMD. The AMD application attempts to detect answering machines at the beginning of outbound calls</description>
 	<menuitems>
 		<amd>AMD Settings</amd>
 	</menuitems>
+	<changelog>
+		*13.0.1* Initial release
+	</changelog>
 	<supported>
 		<version>13.0</version>
 	</supported>
-	<location />
-	<md5sum />
 </module>
