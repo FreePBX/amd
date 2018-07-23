@@ -1,0 +1,123 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for amd
+# Copyright (C) 2008-2018 Sangoma Technologies, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-23 15:55-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: amd.i18n.php:4
+msgid "AMD"
+msgstr ""
+
+#: amd.i18n.php:10
+#: views/settings.php:5
+msgid "AMD Settings"
+msgstr ""
+
+#: views/settings.php:73
+msgid "After Greeting Silence"
+msgstr ""
+
+#: amd.i18n.php:6
+msgid "Applications"
+msgstr ""
+
+#: views/settings.php:169
+msgid "Between Words Silence"
+msgstr ""
+
+#: views/settings.php:12
+msgid "General Settings"
+msgstr ""
+
+#: views/settings.php:49
+msgid "Greeting"
+msgstr ""
+
+#: views/settings.php:25
+msgid "Initial Silence"
+msgstr ""
+
+#: views/settings.php:193
+msgid "Maximum Number Of Words"
+msgstr ""
+
+#: views/settings.php:145
+msgid "Maximum Word Length"
+msgstr ""
+
+#: views/settings.php:157
+msgid "Maximum duration of a single Voice utterance allowed. Default is 5000."
+msgstr ""
+
+#: views/settings.php:61
+msgid ""
+"Maximum length of a greeting. If exceeded then MACHINE. Default is 1500."
+msgstr ""
+
+#: views/settings.php:205
+msgid "Maximum number of words in the greeting. Default is 3."
+msgstr ""
+
+#: views/settings.php:37
+msgid "Maximum silence duration before the greeting. Default is 2500."
+msgstr ""
+
+#: views/settings.php:109
+msgid "Maximum time allowed for the algorithm to decide. Default is 5000."
+msgstr ""
+
+#: views/settings.php:121
+msgid "Minimum Word Length"
+msgstr ""
+
+#: views/settings.php:133
+msgid "Minimum duration of Voice to considered as a word. Default is 100."
+msgstr ""
+
+#: views/settings.php:181
+msgid "Minimum duration of silence after a word to consider. Default is 50."
+msgstr ""
+
+#: Amd.class.php:64
+msgid "Reset"
+msgstr ""
+
+#: views/settings.php:217
+msgid "Silence Threshold"
+msgstr ""
+
+#: views/settings.php:229
+msgid "Silence Threshold. Default is 256."
+msgstr ""
+
+#: views/settings.php:85
+msgid "Silence after detecting a greeting. Default is 800."
+msgstr ""
+
+#: Amd.class.php:69
+msgid "Submit"
+msgstr ""
+
+#: amd.i18n.php:8
+msgid ""
+"This module is used to manage AMD. The AMD application attempts to detect "
+"answering machines at the beginning of outbound calls"
+msgstr ""
+
+#: views/settings.php:97
+msgid "Total Analysis Time"
+msgstr ""
