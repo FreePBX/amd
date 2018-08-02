@@ -2,8 +2,8 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 //take a copy of existing amd.conf
 //lets read the existing configuration
-if(file_exists('/etc/asterisk/amd.conf')) {
-	echo "amd.conf onfiguration file found \n";
+if(file_exists('/etc/asterisk/amd.conf') && !file_exists('/etc/asterisk/amd.conf.backup')) {
+	out(_("amd.conf Configuration file found"));
 	$lines = file('/etc/asterisk/amd.conf',FILE_SKIP_EMPTY_LINES);
 	$existingdata = array();
 	foreach($lines as $line) {
@@ -22,7 +22,7 @@ if(file_exists('/etc/asterisk/amd.conf')) {
 }
 if(count($existingdata) == 9) {
 	FreePBX::AMD()->addAmdSettings($existingdata);
-	echo "Restoring the existing settings \n";
+	out(_("Restoring the existing settings"));
 } else {
 	$data_value = FreePBX::AMD()->getAmdSettings();
 	if(empty($data_value)){
