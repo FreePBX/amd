@@ -109,10 +109,10 @@ class Amd extends \DB_Helper implements \BMO {
 		}
 	}
 	public function addAmdSettings($data) {
+		$this->delConfig('amdsettings');
 		$this->setConfig('amdsettings',$data);
 	}
 	public function getAmdSettings() {
-		$amd = $this->getAll();
 		$amd_values = $this->getConfig('amdsettings');
 		return $amd_values;
 	}
