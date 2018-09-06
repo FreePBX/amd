@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 15:55-0400\n"
+"POT-Creation-Date: 2018-09-06 14:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,6 +96,10 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
+#: install.php:20
+msgid "Restoring the existing settings"
+msgstr ""
+
 #: views/settings.php:217
 msgid "Silence Threshold"
 msgstr ""
@@ -120,4 +124,8 @@ msgstr ""
 
 #: views/settings.php:97
 msgid "Total Analysis Time"
+msgstr ""
+
+#: install.php:10
+msgid "amd.conf Configuration file found"
 msgstr ""
