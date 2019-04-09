@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-06 13:40-0500\n"
+"POT-Creation-Date: 2019-04-09 17:55-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "AMD Settings"
 msgstr ""
 
-#: views/settings.php:73
+#: views/settings.php:69
 msgid "After Greeting Silence"
 msgstr ""
 
@@ -35,84 +35,80 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: views/settings.php:169
+#: views/settings.php:165
 msgid "Between Words Silence"
 msgstr ""
 
-#: views/settings.php:12
-msgid "General Settings"
-msgstr ""
-
-#: views/settings.php:49
+#: views/settings.php:45
 msgid "Greeting"
 msgstr ""
 
-#: views/settings.php:25
+#: views/settings.php:21
 msgid "Initial Silence"
 msgstr ""
 
-#: views/settings.php:193
+#: views/settings.php:189
 msgid "Maximum Number Of Words"
 msgstr ""
 
-#: views/settings.php:145
+#: views/settings.php:141
 msgid "Maximum Word Length"
 msgstr ""
 
-#: views/settings.php:157
+#: views/settings.php:153
 msgid "Maximum duration of a single Voice utterance allowed. Default is 5000."
 msgstr ""
 
-#: views/settings.php:61
+#: views/settings.php:57
 msgid ""
 "Maximum length of a greeting. If exceeded then MACHINE. Default is 1500."
 msgstr ""
 
-#: views/settings.php:205
+#: views/settings.php:201
 msgid "Maximum number of words in the greeting. Default is 3."
 msgstr ""
 
-#: views/settings.php:37
+#: views/settings.php:33
 msgid "Maximum silence duration before the greeting. Default is 2500."
 msgstr ""
 
-#: views/settings.php:109
+#: views/settings.php:105
 msgid "Maximum time allowed for the algorithm to decide. Default is 5000."
 msgstr ""
 
-#: views/settings.php:121
+#: views/settings.php:117
 msgid "Minimum Word Length"
 msgstr ""
 
-#: views/settings.php:133
+#: views/settings.php:129
 msgid "Minimum duration of Voice to considered as a word. Default is 100."
 msgstr ""
 
-#: views/settings.php:181
+#: views/settings.php:177
 msgid "Minimum duration of silence after a word to consider. Default is 50."
 msgstr ""
 
-#: Amd.class.php:64
+#: Amd.class.php:56
 msgid "Reset"
 msgstr ""
 
-#: install.php:20
+#: install.php:21
 msgid "Restoring the existing settings"
 msgstr ""
 
-#: views/settings.php:217
+#: views/settings.php:213
 msgid "Silence Threshold"
 msgstr ""
 
-#: views/settings.php:229
+#: views/settings.php:225
 msgid "Silence Threshold. Default is 256."
 msgstr ""
 
-#: views/settings.php:85
+#: views/settings.php:81
 msgid "Silence after detecting a greeting. Default is 800."
 msgstr ""
 
-#: Amd.class.php:69
+#: Amd.class.php:61
 msgid "Submit"
 msgstr ""
 
@@ -122,7 +118,7 @@ msgid ""
 "answering machines at the beginning of outbound calls"
 msgstr ""
 
-#: views/settings.php:97
+#: views/settings.php:93
 msgid "Total Analysis Time"
 msgstr ""
 
