@@ -5,14 +5,10 @@ extract($data_value);
 	<h1><?php echo _('AMD Settings')?></h1>
 	<div class = "display full-border">
 		<div class="row">
-			<div class="col-md-11">
+			<div class="col-md-12">
 				<div class="fpbx-container">
 					<div class="display full-border">
-						<ul class="nav nav-tabs" role="tablist">
-							<li data-name="amd_general" class="change-tab active"><a href="#amd_general" aria-controls="amd_general" role="tab" data-toggle="tab"><?php echo _("General Settings")?></a></li>
-						</ul>
 						<form class="fpbx-submit" action="" method="post" id="amd-settings" autocomplete="off" name="amd-settings">
-						<div class="tab-content display">
 								<div id="amd_general" class="tab-pane active">
 									<input type="hidden" name="action" value="save">
 									<!--Initial Silence Format-->
@@ -57,7 +53,7 @@ extract($data_value);
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-md-12">	
+											<div class="col-md-12">
 											<span id="greeting-help" class="help-block fpbx-help-block"><?php echo _("Maximum length of a greeting. If exceeded then MACHINE. Default is 1500.")?></span>
 											</div>
 										</div>
@@ -232,7 +228,6 @@ extract($data_value);
 									</div>
 									<!-- End Silence Threshold -->
 								</div>
-							</div>
 						</form>
 					</div>
 				</div>
