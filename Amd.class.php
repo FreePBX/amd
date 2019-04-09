@@ -2,6 +2,18 @@
 namespace FreePBX\modules;
 
 class Amd extends \DB_Helper implements \BMO {
+	private $defaults = array(
+		"initial_silence" => 2500,
+		"greeting" => 1500,
+		"after_greeting_silence" => 800,
+		"total_analysis_time" => 5000,
+		"min_word_length" => 100,
+		"maximum_word_length" => 5000,
+		"between_words_silence" => 50,
+		"maximum_number_of_words" => 3,
+		"silence_threshold" => 256
+	);
+
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
 			throw new Exception("Not given a FreePBX Object");
@@ -20,36 +32,16 @@ class Amd extends \DB_Helper implements \BMO {
 
 	public function doConfigPageInit($page) {
 		if ($page == "amd") {
-			$request = $_REQUEST;
+			$request = freepbxGetSanitizedRequest();
+			$data = array();
+			foreach($this->defaults as $key => $default) {
+				$data[$key] = isset($request[$key]) ? $request[$key] : $default;
+			}
 			$action = isset($request['action'])?$request['action']:'';
-			$initial_silence = !empty($request['initial_silence'])?$request['initial_silence']:'2500';
-			$greeting = !empty($request['greeting'])?$request['greeting']:'1500';
-			$after_greeting_silence = !empty($request['after_greeting_silence'])?$request['after_greeting_silence']:'800';
-			$total_analysis_time = !empty($request['total_analysis_time'])?$request['total_analysis_time']:'5000';
-			$min_word_length = !empty($request['min_word_length'])?$request['min_word_length']:'100';
-			$maximum_word_length = !empty($request['maximum_word_length'])?$request['maximum_word_length']:'5000';
-			$between_words_silence = !empty($request['between_words_silence'])?$request['between_words_silence']:'50';
-			$maximum_number_of_words = !empty($request['maximum_number_of_words'])?$request['maximum_number_of_words']:'3';
-			$silence_threshold = !empty($request['silence_threshold'])?$request['silence_threshold']:'256';
-			$data = array(  "initial_silence" => $initial_silence,
-					"greeting" => $greeting,
-					"after_greeting_silence" => $after_greeting_silence,
-					"total_analysis_time" => $total_analysis_time,
-					"min_word_length" => $min_word_length,
-					"maximum_word_length" => $maximum_word_length,
-					"between_words_silence" => $between_words_silence,
-					"maximum_number_of_words" => $maximum_number_of_words,
-					"silence_threshold" => $silence_threshold
-					);
-			switch($action){
-				case 'save':
-					$this->addAmdSettings($data);
-					needreload();
-					return true;
-					break;
-				default:
-					break;
-				}
+			if($action === 'save') {
+				$this->addAmdSettings($data);
+				needreload();
+			}
 			return true;
 		}
 	}
@@ -73,10 +65,12 @@ class Amd extends \DB_Helper implements \BMO {
 		}
 		return $buttons;
 	}
+
 	public function showPage(){
 		$data_value = $this->getAmdSettings();
 		return load_view(__DIR__.'/views/settings.php',array('data_value' => $data_value));
 	}
+
 	public function ajaxRequest($req, &$setting) {
 		switch ($req) {
 			case 'getJSON':
@@ -87,6 +81,7 @@ class Amd extends \DB_Helper implements \BMO {
 			break;
 		}
 	}
+
 	public function ajaxHandler(){
 		switch ($_REQUEST['command']) {
 			case 'getJSON':
@@ -109,45 +104,52 @@ class Amd extends \DB_Helper implements \BMO {
 		}
 	}
 	public function addAmdSettings($data) {
-		$this->delConfig('amdsettings');
 		$this->setConfig('amdsettings',$data);
 	}
+
 	public function getAmdSettings() {
 		$amd_values = $this->getConfig('amdsettings');
-		return $amd_values;
+
+		$data = array();
+		foreach($this->defaults as $key => $default) {
+			$data[$key] = is_array($amd_values) && isset($amd_values[$key]) ? $amd_values[$key] : $default;
+		}
+
+		return $data;
 	}
+
 	public function delAmdSettings() {
 		$this->delConfig('amdsettings');
 	}
+
 	public function genConfig() {
-		global $version;
+		$version = $this->FreePBX->Config->get('ASTVERSION');
 		if(version_compare($version, '12', 'ge')) {
 			$data = $this->getAmdSettings();
-			$amd_context = 'general';
-			$conf['amd.conf'][$amd_context] = array(
-				'initial_silence' => $data['initial_silence'],
-				'greeting' => $data['greeting'],
-				'after_greeting_silence' => $data['after_greeting_silence'],
-				'total_analysis_time' => $data['total_analysis_time'],
-				'min_word_length' => $data['min_word_length'],
-				'maximum_word_length' => $data['maximum_word_length'],
-				'between_words_silence' => $data['between_words_silence'],
-				'maximum_number_of_words' => $data['maximum_number_of_words'],
-				'silence_threshold' => $data['silence_threshold']
+			if(empty($data)) {
+				return array();
+			}
+			return array(
+				'amd.conf' => array(
+					'general' => array(
+						'initial_silence' => $data['initial_silence'],
+						'greeting' => $data['greeting'],
+						'after_greeting_silence' => $data['after_greeting_silence'],
+						'total_analysis_time' => $data['total_analysis_time'],
+						'min_word_length' => $data['min_word_length'],
+						'maximum_word_length' => $data['maximum_word_length'],
+						'between_words_silence' => $data['between_words_silence'],
+						'maximum_number_of_words' => $data['maximum_number_of_words'],
+						'silence_threshold' => $data['silence_threshold']
+					)
+				)
 			);
-			return $conf;
 		}
 	}
+
 	public function writeConfig($conf){
-		global $amp_conf;
-		global $astman;
-		if (is_object($astman)) {
-			$param['Module'] = "app_amd.so";
-			$param['LoadType'] = "load";
-			$value = $astman->send_request("ModuleCheck", $param);
-			if($value['Response'] == "Error"){
-				$astman->send_request("ModuleLoad", $param);
-			}
+		if ($this->FreePBX->astman->connected() && !$this->FreePBX->astman->mod_loaded("app_amd.so")) {
+			exec(fpbx_which('asterisk')." -rx 'module load app_amd.so'");
 		}
 		$this->FreePBX->WriteConfig($conf);
 	}
