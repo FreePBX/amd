@@ -2,7 +2,7 @@
 	<rawname>amd</rawname>
 	<repo>standard</repo>
 	<name>AMD</name>
-	<version>13.0.3</version>
+	<version>13.0.4</version>
 	<publisher>Sangoma Technologies Inc.</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<amd>AMD Settings</amd>
 	</menuitems>
 	<changelog>
+		*13.0.4* Packaging of ver 13.0.4
 		*13.0.3* FREEPBX-19776
 		*13.0.2* FREEPBX-17940 Installing amd module overwrites amd.conf without preserving content
 		*13.0.1* Initial release
