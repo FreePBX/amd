@@ -2,8 +2,8 @@
 	<rawname>amd</rawname>
 	<repo>standard</repo>
 	<name>AMD</name>
-	<version>15.0.2</version>
-	<publisher>Schmooze Com. Inc.</publisher>
+	<version>15.0.3</version>
+	<publisher>Sangoma Technologies Inc.</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Applications</category>
@@ -12,6 +12,7 @@
 		<amd>AMD Settings</amd>
 	</menuitems>
 	<changelog>
+		*15.0.3* Packaging of ver 15.0.3
 		*15.0.2* FREEPBX-19776
 		*15.0.1* Add backup and restore
 	</changelog>
