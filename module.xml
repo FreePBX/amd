@@ -2,7 +2,7 @@
 	<rawname>amd</rawname>
 	<repo>standard</repo>
 	<name>AMD</name>
-	<version>16.0.2</version>
+	<version>16.0.3</version>
 	<publisher>Sangoma Technologies Inc.</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<amd>AMD Settings</amd>
 	</menuitems>
 	<changelog>
+		*16.0.3* Reverting Bootstrap and dependent libs fixes 
 		*16.0.2* FREEI-4793 
 		*16.0.1* Initial 16.0 release
 	</changelog>
