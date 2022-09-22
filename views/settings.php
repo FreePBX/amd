@@ -15,8 +15,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="initial_silence"><?php echo _("Initial Silence") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="initial_silence"></i>
@@ -39,8 +39,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="greeting"><?php echo _("Greeting") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="greeting"></i>
@@ -63,8 +63,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="after_greeting_silence"><?php echo _("After Greeting Silence") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="after_greeting_silence"></i>
@@ -87,8 +87,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="total_analysis_time"><?php echo _("Total Analysis Time") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="total_analysis_time"></i>
@@ -111,8 +111,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="min_word_length"><?php echo _("Minimum Word Length") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="min_word_length"></i>
@@ -135,8 +135,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="maximum_word_length"><?php echo _("Maximum Word Length") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="maximum_word_length"></i>
@@ -159,8 +159,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="between_words_silence"><?php echo _("Between Words Silence") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="between_words_silence"></i>
@@ -183,8 +183,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="maximum_number_of_words"><?php echo _("Maximum Number Of Words") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="maximum_number_of_words"></i>
@@ -207,8 +207,8 @@ extract($data_value);
 									<div class="element-container">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="">
-													<div class="form-group row">
+												<div class="row">
+													<div class="form-group">
 														<div class="col-md-3">
 															<label class="control-label" for="silence_threshold"><?php echo _("Silence Threshold") ?></label>
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="silence_threshold"></i>
