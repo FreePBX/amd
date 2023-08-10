@@ -2,17 +2,7 @@
 namespace FreePBX\modules;
 
 class Amd extends \DB_Helper implements \BMO {
-	private $defaults = array(
-		"initial_silence" => 2500,
-		"greeting" => 1500,
-		"after_greeting_silence" => 800,
-		"total_analysis_time" => 5000,
-		"min_word_length" => 100,
-		"maximum_word_length" => 5000,
-		"between_words_silence" => 50,
-		"maximum_number_of_words" => 3,
-		"silence_threshold" => 256
-	);
+	private array $defaults = ["initial_silence" => 2500, "greeting" => 1500, "after_greeting_silence" => 800, "total_analysis_time" => 5000, "min_word_length" => 100, "maximum_word_length" => 5000, "between_words_silence" => 50, "maximum_number_of_words" => 3, "silence_threshold" => 256];
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -33,11 +23,11 @@ class Amd extends \DB_Helper implements \BMO {
 	public function doConfigPageInit($page) {
 		if ($page == "amd") {
 			$request = freepbxGetSanitizedRequest();
-			$data = array();
+			$data = [];
 			foreach($this->defaults as $key => $default) {
-				$data[$key] = isset($request[$key]) ? $request[$key] : $default;
+				$data[$key] = $request[$key] ?? $default;
 			}
-			$action = isset($request['action'])?$request['action']:'';
+			$action = $request['action'] ?? '';
 			if($action === 'save') {
 				$this->addAmdSettings($data);
 				needreload();
@@ -46,21 +36,10 @@ class Amd extends \DB_Helper implements \BMO {
 		}
 	}
 	public function getActionBar($request) {
-		$buttons = array();
+		$buttons = [];
 		switch($_GET['display']) {
 			case 'amd':
-				$buttons = array(
-					'reset' => array(
-						'name' => 'reset',
-						'id' => 'reset',
-						'value' => _('Reset')
-					),
-					'submit' => array(
-						'name' => 'submit',
-						'id' => 'submit',
-						'value' => _('Submit')
-					)
-				);
+				$buttons = ['reset' => ['name' => 'reset', 'id' => 'reset', 'value' => _('Reset')], 'submit' => ['name' => 'submit', 'id' => 'submit', 'value' => _('Submit')]];
 			break;
 		}
 		return $buttons;
@@ -68,18 +47,14 @@ class Amd extends \DB_Helper implements \BMO {
 
 	public function showPage(){
 		$data_value = $this->getAmdSettings();
-		return load_view(__DIR__.'/views/settings.php',array('data_value' => $data_value));
+		return load_view(__DIR__.'/views/settings.php',['data_value' => $data_value]);
 	}
 
 	public function ajaxRequest($req, &$setting) {
-		switch ($req) {
-			case 'getJSON':
-				return true;
-			break;
-			default:
-				return false;
-			break;
-		}
+		return match ($req) {
+      'getJSON' => true,
+      default => false,
+  };
 	}
 
 	public function ajaxHandler(){
@@ -87,7 +62,7 @@ class Amd extends \DB_Helper implements \BMO {
 			case 'getJSON':
 				switch ($_REQUEST['jdata']) {
 					case 'grid':
-						$ret = array();
+						$ret = [];
 						/*code here to generate array*/
 						return $ret;
 					break;
@@ -110,7 +85,7 @@ class Amd extends \DB_Helper implements \BMO {
 	public function getAmdSettings() {
 		$amd_values = $this->getConfig('amdsettings');
 
-		$data = array();
+		$data = [];
 		foreach($this->defaults as $key => $default) {
 			$data[$key] = is_array($amd_values) && isset($amd_values[$key]) ? $amd_values[$key] : $default;
 		}
@@ -127,23 +102,9 @@ class Amd extends \DB_Helper implements \BMO {
 		if(version_compare($version, '12', 'ge')) {
 			$data = $this->getAmdSettings();
 			if(empty($data)) {
-				return array();
+				return [];
 			}
-			return array(
-				'amd.conf' => array(
-					'general' => array(
-						'initial_silence' => $data['initial_silence'],
-						'greeting' => $data['greeting'],
-						'after_greeting_silence' => $data['after_greeting_silence'],
-						'total_analysis_time' => $data['total_analysis_time'],
-						'min_word_length' => $data['min_word_length'],
-						'maximum_word_length' => $data['maximum_word_length'],
-						'between_words_silence' => $data['between_words_silence'],
-						'maximum_number_of_words' => $data['maximum_number_of_words'],
-						'silence_threshold' => $data['silence_threshold']
-					)
-				)
-			);
+			return ['amd.conf' => ['general' => ['initial_silence' => $data['initial_silence'], 'greeting' => $data['greeting'], 'after_greeting_silence' => $data['after_greeting_silence'], 'total_analysis_time' => $data['total_analysis_time'], 'min_word_length' => $data['min_word_length'], 'maximum_word_length' => $data['maximum_word_length'], 'between_words_silence' => $data['between_words_silence'], 'maximum_number_of_words' => $data['maximum_number_of_words'], 'silence_threshold' => $data['silence_threshold']]]];
 		}
 	}
 

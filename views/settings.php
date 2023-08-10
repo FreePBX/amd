@@ -22,7 +22,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="initial_silence"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="initial_silence" name="initial_silence" value="<?php echo isset($initial_silence)?$initial_silence:''?>">
+															<input type="number" class="form-control" id="initial_silence" name="initial_silence" value="<?php echo $initial_silence ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -46,7 +46,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="greeting"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="greeting" name="greeting" value="<?php echo isset($greeting)?$greeting:''?>">
+															<input type="number" class="form-control" id="greeting" name="greeting" value="<?php echo $greeting ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -70,7 +70,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="after_greeting_silence"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="after_greeting_silence" name="after_greeting_silence" value="<?php echo isset($after_greeting_silence)?$after_greeting_silence:''?>">
+															<input type="number" class="form-control" id="after_greeting_silence" name="after_greeting_silence" value="<?php echo $after_greeting_silence ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -94,7 +94,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="total_analysis_time"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="total_analysis_time" name="total_analysis_time" value="<?php echo isset($total_analysis_time)?$total_analysis_time:''?>">
+															<input type="number" class="form-control" id="total_analysis_time" name="total_analysis_time" value="<?php echo $total_analysis_time ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -118,7 +118,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="min_word_length"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="min_word_length" name="min_word_length" value="<?php echo isset($min_word_length)?$min_word_length:''?>">
+															<input type="number" class="form-control" id="min_word_length" name="min_word_length" value="<?php echo $min_word_length ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -142,7 +142,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="maximum_word_length"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="maximum_word_length" name="maximum_word_length" value="<?php echo isset($maximum_word_length)?$maximum_word_length:''?>">
+															<input type="number" class="form-control" id="maximum_word_length" name="maximum_word_length" value="<?php echo $maximum_word_length ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -166,7 +166,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="between_words_silence"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="between_words_silence" name="between_words_silence" value="<?php echo isset($between_words_silence)?$between_words_silence:''?>">
+															<input type="number" class="form-control" id="between_words_silence" name="between_words_silence" value="<?php echo $between_words_silence ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -190,7 +190,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="maximum_number_of_words"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="maximum_number_of_words" name="maximum_number_of_words" value="<?php echo isset($maximum_number_of_words)?$maximum_number_of_words:''?>">
+															<input type="number" class="form-control" id="maximum_number_of_words" name="maximum_number_of_words" value="<?php echo $maximum_number_of_words ?? ''?>">
 														</div>
 													</div>
 												</div>
@@ -214,7 +214,7 @@ extract($data_value);
 															<i class="fa fa-question-circle fpbx-help-icon" data-for="silence_threshold"></i>
 														</div>
 														<div class="col-md-9">
-															<input type="number" class="form-control" id="silence_threshold" name="silence_threshold" value="<?php echo isset($silence_threshold)?$silence_threshold:''?>">
+															<input type="number" class="form-control" id="silence_threshold" name="silence_threshold" value="<?php echo $silence_threshold ?? ''?>">
 														</div>
 													</div>
 												</div>
