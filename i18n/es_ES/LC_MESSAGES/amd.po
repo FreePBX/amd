@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-09 17:50-0400\n"
+"POT-Creation-Date: 2024-02-27 04:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Minimum duration of silence after a word to consider. Default is 50."
 msgstr ""
 
-#: Amd.class.php:56
+#: Amd.class.php:42
 msgid "Reset"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Silence after detecting a greeting. Default is 800."
 msgstr ""
 
-#: Amd.class.php:61
+#: Amd.class.php:42
 msgid "Submit"
 msgstr ""
 

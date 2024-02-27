@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for amd
-# Copyright (C) 2008-2022 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2024 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 01:51+0000\n"
+"POT-Creation-Date: 2024-02-27 04:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Minimum duration of silence after a word to consider. Default is 50."
 msgstr ""
 
-#: Amd.class.php:56
+#: Amd.class.php:42
 msgid "Reset"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Silence after detecting a greeting. Default is 800."
 msgstr ""
 
-#: Amd.class.php:61
+#: Amd.class.php:42
 msgid "Submit"
 msgstr ""
 
