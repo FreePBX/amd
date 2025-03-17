@@ -117,7 +117,7 @@ msgid ""
 "This module is used to manage AMD. The AMD application attempts to detect "
 "answering machines at the beginning of outbound calls"
 msgstr ""
-Этот модуль используется для управления AMD. Приложение AMD пытается обнаружить "
+"Этот модуль используется для управления AMD. Приложение AMD пытается обнаружить "
 "автоответчики в начале исходящих вызовов"
 
 #: views/settings.php:93
