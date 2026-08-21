@@ -17,6 +17,6 @@ if(file_exists($dir.'/amd.conf') && !file_exists($dir.'/amd.conf.backup')) {
 }
 
 if(!empty($existingdata)) {
-	FreePBX::AMD()->addAmdSettings($existingdata);
+	FreePBX::Amd()->addAmdSettings($existingdata);
 	out(_("Restoring the existing settings"));
 }

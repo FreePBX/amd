@@ -3,13 +3,13 @@ namespace FreePBX\modules;
 
 class Amd extends \DB_Helper implements \BMO {
 	private array $defaults = ["initial_silence" => 2500, "greeting" => 1500, "after_greeting_silence" => 800, "total_analysis_time" => 5000, "min_word_length" => 100, "maximum_word_length" => 5000, "between_words_silence" => 50, "maximum_number_of_words" => 3, "silence_threshold" => 256];
+	private object $FreePBX;
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
-			throw new Exception("Not given a FreePBX Object");
+			throw new \Exception("Not given a FreePBX Object");
 		}
 		$this->FreePBX = $freepbx;
-		$this->db = $freepbx->Database;
 	}
 
 	public function install() {}
@@ -37,7 +37,7 @@ class Amd extends \DB_Helper implements \BMO {
 	}
 	public function getActionBar($request) {
 		$buttons = [];
-		switch($_GET['display']) {
+		switch($_GET['display'] ?? '') {
 			case 'amd':
 				$buttons = ['reset' => ['name' => 'reset', 'id' => 'reset', 'value' => _('Reset')], 'submit' => ['name' => 'submit', 'id' => 'submit', 'value' => _('Submit')]];
 			break;
@@ -106,6 +106,7 @@ class Amd extends \DB_Helper implements \BMO {
 			}
 			return ['amd.conf' => ['general' => ['initial_silence' => $data['initial_silence'], 'greeting' => $data['greeting'], 'after_greeting_silence' => $data['after_greeting_silence'], 'total_analysis_time' => $data['total_analysis_time'], 'min_word_length' => $data['min_word_length'], 'maximum_word_length' => $data['maximum_word_length'], 'between_words_silence' => $data['between_words_silence'], 'maximum_number_of_words' => $data['maximum_number_of_words'], 'silence_threshold' => $data['silence_threshold']]]];
 		}
+		return [];
 	}
 
 	public function writeConfig($conf){
